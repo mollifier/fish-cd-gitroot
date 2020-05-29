@@ -11,6 +11,9 @@ function cd-gitroot
     _cd-gitroot_print_error 'Not in a git repository'
     return 2
   end
+
+  set -l root_path (git rev-parse --show-toplevel)
+  cd -- $root_path
 end
 
 function _cd-gitroot_print_help
