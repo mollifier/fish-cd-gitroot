@@ -1,4 +1,4 @@
-# cd-gitroot-fish
+# fish-cd-gitroot
 
 ## Synopsis
 Fish plugin to change directory to git repository root directory.
@@ -8,10 +8,10 @@ Port of [cd-gitroot](https://github.com/mollifier/cd-gitroot) for the fish shell
 ## How to set up
 
 ### Installing using fisher
-We recommend using [fisher](https://github.com/jorgebucaran/fisher) to install cd-gitroot-fish.
+We recommend using [fisher](https://github.com/jorgebucaran/fisher) to install fish-cd-gitroot.
 
 ```
-fisher add mollifier/cd-gitroot-fish
+fisher add mollifier/fish-cd-gitroot
 ```
 
 ## Usage
@@ -25,5 +25,5 @@ else change directory to PATH instead of it.
 PATH is treated relative path in git root directory.
 
 ## Options
-\-h display help and exit
+\--help    display help and exit
 
