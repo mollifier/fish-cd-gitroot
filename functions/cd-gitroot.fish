@@ -6,6 +6,11 @@ function cd-gitroot
     _cd-gitroot_print_help
     return
   end
+
+  if not git rev-parse --is-inside-work-tree > /dev/null 2>&1
+    _cd-gitroot_print_error 'Not in a git repository'
+    return 2
+  end
 end
 
 function _cd-gitroot_print_help
@@ -15,5 +20,11 @@ If PATH is specified, change directory to PATH instead of it.
 PATH is treated relative path in git root directory.
 
 -h, --help    display this help and exit'
+
+end
+
+function _cd-gitroot_print_error
+  echo "cd-gitroot: $argv
+Try '-h' or '--help' option for more information." 1>&2
 
 end
