@@ -13,14 +13,23 @@ function _cd-gitroot_complete_path
 end
 
 function _cd-gitroot_fish_complete_directories
-  set -l base $argv[1]
+  set -l base_directory $argv[1]
   set -l current $argv[2]
 
-  set -l target $base
-  if test -n "$current"
-    set target $current
-  end
+  # remove / to end if exists
+  set base_directory (echo $base_directory | string trim -r -c /)
+  # add/ to end
+  set base_directory {$base_directory}/
 
-  command ls -dp "$target"*
+  set desc (_ "Directory")
+  set -l dirs (
+    complete -C"nonexistentcommandooheehoohaahaahdingdongwallawallabingbang $base_directory$current" \
+      | string match -r '.*/$' \
+      | string replace $base_directory ''
+  )
+
+  if set -q dirs[1]
+    printf "%s\t$desc\n" $dirs
+  end
 end
 
