@@ -23,7 +23,7 @@ function _cd-gitroot_fish_complete_directories
 
   set desc (_ "Directory")
   set -l dirs (
-    complete -C"nonexistentcommandooheehoohaahaahdingdongwallawallabingbang $base_directory$current" \
+    complete -C"_cd-gitroot_not_exist_command_for_completion_directory_xxx $base_directory$current" \
       | string match -r '.*/$' \
       | string replace $base_directory ''
   )
