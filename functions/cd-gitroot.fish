@@ -13,7 +13,13 @@ function cd-gitroot
   end
 
   set -l root_path (git rev-parse --show-toplevel)
-  cd -- $root_path
+  set -l relative_path $argv[1]
+
+  if test -z "$relative_path"
+    cd -- $root_path
+  else
+    cd -- $root_path/$relative_path
+  end
 end
 
 function _cd-gitroot_print_help
