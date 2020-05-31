@@ -17,7 +17,7 @@ fisher add mollifier/fish-cd-gitroot
 ## Usage
 
 ```
-cd-gitroot [PATH]
+cd-gitroot [OPTION] [PATH]
 ```
 
 If PATH isn't specified, change directory to current git repository root directory.
@@ -25,5 +25,5 @@ else change directory to PATH instead of it.
 PATH is treated relative path in git root directory.
 
 ## Options
-\--help    display help and exit
+\--help, -h    display help and exit
 

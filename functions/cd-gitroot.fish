@@ -23,7 +23,7 @@ function cd-gitroot
 end
 
 function _cd-gitroot_print_help
-  echo 'Usage: cd-gitroot [PATH]
+  echo 'Usage: cd-gitroot [OPTION] [PATH]
 Change directory to current git repository root directory.
 If PATH is specified, change directory to PATH instead of it.
 PATH is treated relative path in git root directory.
